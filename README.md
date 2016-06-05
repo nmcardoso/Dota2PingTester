@@ -2,6 +2,7 @@ Dota 2 Ping Tester
 ===================
 
 ![screenshot image](screenshot.png)
+
 Screenshot of the running program.
 
 -------
@@ -25,4 +26,4 @@ or simply:
 bash Dota2PingTester.sh
 ```
 
->**Important: ** Use the command **bash** and not **sh**!
+> **Important:** Use the command **bash** and not **sh**!
