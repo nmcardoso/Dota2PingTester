@@ -33,7 +33,7 @@ menu() {
 		menu_items+=("$i" "${LOCALE[$i]}")
 	done
 	
-	option=$(whiptail --title "Dota 2 Ping Tester" --menu "Select a server to test" 15 60 4 "${menu_items[@]}" 3>&1 1>&2 2>&3)
+	option=$(whiptail --title "Dota 2 Ping Tester" --menu "Select a server to test" 15 60 6 "${menu_items[@]}" 3>&1 1>&2 2>&3)
 	
 	exit_status=$?
 	if [ $exit_status -eq 1 ]; then
