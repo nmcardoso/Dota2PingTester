@@ -28,12 +28,14 @@ pingTest() {
 menu() {
 	clear
 	
+	default_item=${1-0} # if no param, set 0 to default
+	
 	menu_items=()
 	for ((i = 0; i < ${#LOCALE[@]}; i++)) do
 		menu_items+=("$i" "${LOCALE[$i]}")
 	done
 	
-	option=$(whiptail --title "Dota 2 Ping Tester" --menu "Select a server to test" 15 60 6 "${menu_items[@]}" 3>&1 1>&2 2>&3)
+	option=$(whiptail --title "Dota 2 Ping Tester" --menu "Select a server to test" --default-item "$default_item" 15 60 6 "${menu_items[@]}" 3>&1 1>&2 2>&3)
 	
 	exit_status=$?
 	if [ $exit_status -eq 1 ]; then
@@ -58,7 +60,7 @@ menu() {
 	
 	exit_status=$?
 	if [ $exit_status -eq 0 ]; then
-		menu
+		menu $option
 	else
 		echo "Goodbye..."
 		exit 0
